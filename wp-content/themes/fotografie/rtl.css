@@ -1,0 +1,303 @@
+/*
+Theme Name: Fotografie
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Languagecomponentsupport
+
+*/
+
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus,
+.mobile-search-wrapper .search-button-text:focus {
+  right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  float: right;
+  margin: 0.6em 0 1.5em 1.5em;
+}
+
+.alignright {
+  float: left;
+  margin: 0.6em 1.5em 1.5em 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote {
+  margin-left: 0;
+  margin-right: -50px;
+  padding-right: 60px;
+  padding-left: 0;
+}
+
+blockquote:before {
+  content: "\201d";
+  font-style: normal;
+  right: 0;
+  left: auto;
+}
+
+/*--------------------------------------------------------------
+# FontAwesome
+--------------------------------------------------------------*/
+.main-navigation ul ul .menu-item-has-children > a:after {
+  float: left;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+textarea {
+  padding-right: 3px;
+}
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+li > ul,
+li > ol {
+  margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Main Menu
+--------------------------------------------------------------*/
+.main-navigation {
+  float: right;
+}
+
+.main-navigation ul {
+  padding-right: 0;
+}
+
+.main-navigation ul ul li {
+  text-align: right;
+}
+
+.main-navigation .menu-item-has-children > a {
+  padding-left: 50px;
+}
+
+.mobile-search-wrapper .search-submit {
+  left: 0;
+  right: auto;
+}
+
+.menu-toggle:before {
+  margin-left: 5px;
+}
+
+.dropdown-toggle {
+  left: 0;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-search {
+  left: 0;
+  right: auto;
+}
+
+.search-toggle {
+  float: left;
+}
+
+.search-wrapper {
+  float: left;
+}
+
+.search-wrapper:before {
+  left: 16px;
+  right: auto;
+}
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+.post-archive .post-thumbnail {
+  float: right;
+}
+
+.post-archive .entry-meta .posted-on,
+.post-archive .entry-meta .byline,
+.post-archive .entry-meta .comments-link {
+  margin-left: 7px;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.widget-area ul,
+.widget-area ol {
+    margin-right: 0;
+}
+
+.widget_categories ul,
+.widget_archive ul {
+  text-align: left;
+}
+
+.widget_categories ul a,
+.widget_archive ul a {
+  float: right;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* Give some padding to floated elements, to prevent them butting up against text. */
+.wp-caption.alignleft {
+  margin: 0.375em 0 1.5em 1.5em;
+}
+
+.wp-caption.alignright {
+  margin: 0.375em 1.5em 1.5em 0;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## >= 534px
+--------------------------------------------------------------*/
+@media screen and (min-width: 33.375em) {
+  .post-archive .hentry {
+    float: right;
+  }
+
+  .featured-content-wrapper .post-thumbnail,
+  .featured-content-wrapper .featured-content-entry-header,
+  .portfolio-wrapper .post-thumbnail,
+  .portfolio-wrapper .portfolio-entry-header {
+    direction: rtl;
+  }
+
+  .portfolio-wrapper .hentry:nth-child(2n),
+  .featured-content-wrapper .hentry:nth-child(2n) {
+    direction: ltr;
+  }
+
+  .portfolio-wrapper .hentry:nth-child(2n) .post-thumbnail,
+  .featured-content-wrapper .hentry:nth-child(2n) .post-thumbnail {
+    right: 50%;
+    left: 0;
+  }
+
+  .comment-navigation .nav-previous,
+  .posts-navigation .nav-previous,
+  .post-navigation .nav-previous {
+    float: right;
+    text-align: right;
+  }
+
+  .comment-navigation .nav-next,
+  .posts-navigation .nav-next,
+  .post-navigation .nav-next {
+    float: left;
+    text-align: left;
+  }
+}
+
+/*--------------------------------------------------------------
+## >= 768px
+--------------------------------------------------------------*/
+@media screen and (min-width: 48em) {
+  .section .hentry,
+  .footer-widget-area .widget-column {
+    float: right;
+  }
+
+  .portfolio-wrapper .hentry:nth-child(2n),
+  .featured-content-wrapper .hentry:nth-child(2n) {
+    direction: rtl;
+  }
+
+  .main-navigation .menu-item-has-children > a {
+    padding-left: 28px;
+  }
+
+  .main-navigation .menu-item-has-children li > a {
+    padding-left: 14px;
+  }
+
+  .main-navigation .menu-item-has-children > a:after,
+  .main-navigation .page_item_has_children > a:after {
+    padding-right: 13px;
+  }
+
+  .main-navigation ul ul {
+    float: right;
+    right: -999em;
+  }
+
+  .main-navigation ul li:hover > ul,
+  .main-navigation ul li.focus > ul {
+    right: auto;
+  }
+
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li.focus > ul {
+    left: auto;
+    right: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+## >= 1024px
+--------------------------------------------------------------*/
+@media screen and (min-width: 64em) {
+  .search-wrapper:before {
+    left: 26px;
+    right: auto;
+  }
+
+  .post-archive .post-thumbnail {
+    left: auto;
+    right: 0;
+  }
+
+  .post-archive .content-right {
+    float: left;
+  }
+
+  .post-archive .entry-meta .posted-on,
+  .post-archive .entry-meta .byline,
+  .post-archive .entry-meta .comments-link {
+    margin-left: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## >= 1152px
+--------------------------------------------------------------*/
+@media screen and (min-width: 72em) {
+  .post-archive .entry-summary {
+    float: right;
+  }
+
+  .post-archive .entry-meta {
+    float: right;
+    padding-right: 28px;
+  }
+}

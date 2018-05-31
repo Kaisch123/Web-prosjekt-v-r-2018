@@ -1,0 +1,92 @@
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+
+/* clearfix */
+.gmwd_markers_carousel_container  .owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+/* display none until init */
+.gmwd_markers_carousel_container .owl-carousel{
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+.gmwd_markers_carousel_container .owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.gmwd_markers_carousel_container .owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.gmwd_markers_carousel_container .owl-carousel .owl-wrapper-outer.autoHeight{
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}
+	
+.gmwd_markers_carousel_container .owl-carousel .owl-item{
+	float: left;
+}
+.gmwd_markers_carousel_container .owl-controls .owl-page,
+.gmwd_markers_carousel_container .owl-controls .owl-buttons div{
+	cursor: pointer;
+}
+.gmwd_markers_carousel_container .owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.gmwd_markers_carousel_container .grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.gmwd_markers_carousel_container .owl-carousel  .owl-wrapper,
+.gmwd_markers_carousel_container .owl-carousel  .owl-item{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+.gmwd_markers_carousel_container{
+    position: relative;
+}
+.gmwd_markers_carousel_container .prev, .gmwd_markers_carousel_container .next {
+    width: 12px;
+    height: 20px;
+    position: absolute;
+    top: 37%;
+    cursor:pointer;
+    box-shadow:none!important;
+
+}
+
+.gmwd_markers_carousel_container  .next{
+    background: url(../images/arrow_right.png) no-repeat left center;
+    right: -28px;
+}
+
+.gmwd_markers_carousel_container  .prev {
+    background: url(../images/arrow_left.png) no-repeat right center; 
+    left: -28px;
+}
